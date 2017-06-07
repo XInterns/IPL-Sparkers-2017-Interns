@@ -1,4 +1,4 @@
-# IPL-T2 - Sparkers
+# IPL-T2 : Sparkers
 
 ### Authors: Soham Mandal, Gursahej Gandhoke, Yash Bhardwaj
 
