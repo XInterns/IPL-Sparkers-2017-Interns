@@ -16,10 +16,10 @@ Pre-requisites
 
 *Algorithms & Techniques
 
-1.K -neighbour
-2.Random Forest
-3.Logistic Regression
-4.Principal Component Analysis (PCA)
+1. K -neighbour
+2. Random Forest
+3. Logistic Regression
+4. Principal Component Analysis (PCA)
 
 
 *Possible Features :
