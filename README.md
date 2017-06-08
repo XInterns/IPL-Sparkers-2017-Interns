@@ -35,7 +35,7 @@ Pre-requisites
  
 *Data Cleaning : 
 
-1. Season : 2008 - 2015
+1. Season : 2008 - 2015 (8 Seasons)
 2. Teams : DD, KKR, MI, RCB, KXIP, RR, CSK (7 Teams)
-3. Neglect matches that have inconsistencies such as Duckward Lewis, etc.
+3. Neglect matches that have inconsistencies such as No Result, Duckward Lewis, etc.
 
