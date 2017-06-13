@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#user defined ignore directories
+/**/metastore_db/
+/**/metastore_db/**/
+/**/.~lock.*
+
