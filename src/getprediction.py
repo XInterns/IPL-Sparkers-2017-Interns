@@ -5,7 +5,6 @@
 
 # In[1]:
 
-get_ipython().magic(u'matplotlib inline')
 import numpy as np # imports a fast numerical programming library
 import pandas as pd #lets us handle data as dataframes
 #sets up pandas table display
@@ -45,8 +44,7 @@ Y_timetest_arr = np.ravel(Y_timetest)
 # Best values of k in time-based split data
 knn1 = KNeighborsClassifier(n_neighbors = 31)
 knn1.fit(X_timetrain, Y_timetrain_arr)
-y_pred = knn1.predict(X_timetest)
-print "Accuracy is ", metrics.accuracy_score(Y_timetest_arr, y_pred)*100, "%"
+
 
 
 # In[6]:
