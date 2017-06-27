@@ -6,12 +6,11 @@
 		table{
 				border: 1px solid black;
 			}
-            
+
             td {
             	width: 5px;
             	border: 1px solid black;
             	}
-            
 	</style>
 </head>
 <body>
@@ -721,11 +720,31 @@
 <td>Chennai Super Kings</td>
 </tr>
 </tbody></table>
-<br />
-<br />
-<form action="">
-Match Id:<br>
-<input type="number" name="mid" value="" placeholder="Enter the Match Id"/>
-</form>
+<br>
+<br>
+<input type="number" id="midinput" value="" placeholder="Enter the Match Id"/>
+<button type="button" onClick="return predictionsubmit()">Predict</button>
+<br>
+<div id="predictiondisplay">
+	
+</div>
+<script type="text/javascript">
+	function predictionsubmit(){
+
+		let url = "http://127.0.0.1:3000/prediction/";
+		let input = document.getElementById("midinput");
+		url = url + parseInt(input.value);
+
+		console.debug(input.value);
+		let xmlHttp = new XMLHttpRequest(); //ajax call to directly access the prediction api
+		xmlHttp.open( "GET", url, false ); // false for synchronous request
+		xmlHttp.send(null);
+
+		result = JSON.parse(xmlHttp.responseText);
+		document.getElementById('predictiondisplay').innerHTML = 
+		result['name'] +" has a win percentage of " + result['prob'] + "%";
+	}
+
+</script>
 </body>
 </html>
