@@ -1,7 +1,13 @@
 #!/usr/bin/python
-from flask import Flask,json,Response
+from flask import Flask,json,Response, render_template
 import getprediction
-app = Flask(__name__)
+app = Flask(__name__, template_folder="webpage")
+
+
+@app.route("/")
+def index():
+    return render_template('./index.html')
+
 
 @app.route('/prediction/<int:mid>', methods=["GET"])
 def api_article(mid):
