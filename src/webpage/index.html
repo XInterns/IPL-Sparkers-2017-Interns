@@ -3,25 +3,63 @@
 <head>
 	<title>Prediction Model</title>
 	<style type="text/css">
-		table{
+		
+                 table{
+                     border-collapse:collapse;
+                  }
+                   
+                     table,th,td{
 				border: 1px solid black;
-			}
+			     }
+               tr:nth-child(even){background-color: #f2f2f2}
+               th {
+         background-color: #4CAF50;
+         color: white;
+}
 
-            td {
-            	width: 5px;
-            	border: 1px solid black;
-            	}
+        .table-hover tbody tr:hover td
+
+        {
+
+            background-color: SkyBlue;
+
+            color: red;
+ 
+         }
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+            
 	</style>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<table>
+
+
+<body background-color: lightblue>
+	<table style="width:100%">
+<img src="IPL.jpg" alt="IPL" width="150" height="170">
+
+
+
+<header>
+    <center><h1>Sparkers</h1></center>
+  
+</header>         
+  <table class="table table-hover">
 <tbody><tr>
-<td>id</td>
-<td>season</td>
-<td>city</td>
-<td>date</td>
-<td>team1</td>
-<td>team2</td>
+<th>id</th>
+<th>season</th>
+<th>city</th>
+<th>date</th>
+<th>team1</th>
+<th>team2</th>
 </tr>
 <tr>
 <td>399</td>
@@ -719,19 +757,18 @@
 <td>Mumbai Indians</td>
 <td>Chennai Super Kings</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <br>
 <br>
 <input type="number" id="midinput" value="" placeholder="Enter the Match Id"/>
 <button type="button" onClick="return predictionsubmit()">Predict</button>
 <br>
 <div id="predictiondisplay">
-	
-</div>
 <script type="text/javascript">
 	function predictionsubmit(){
 
-		let url = "http://127.0.0.1:3000/prediction/";
+		let url = "http://127.0.0.1:3001/prediction/";
 		let input = document.getElementById("midinput");
 		url = url + parseInt(input.value);
 
