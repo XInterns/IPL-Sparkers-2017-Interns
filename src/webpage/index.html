@@ -809,10 +809,9 @@ $(document).ready(function(){
 <div id ="prediction" class="container" style="background-color:white">
 <center><input type="text" id="midinput" placeholder="Enter the Match Id" style="margin-top:20px; border:circle 2px;"/><br>
 <br>
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1" data-title="Prediction" onClick="return predictionsubmit()"><tt>Prediction<tt></button>
+<button type="button" class="btn btn-success" onClick="return predictionsubmit()">Prediction</button>
 </center><div>
-<!-- Modal HTML -->
-    <div id="myModal1" class="modal fade">
+ <div id="myModal1" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -829,10 +828,6 @@ $(document).ready(function(){
             </div>
         </div>
     </div>
-	<!--End of Modal BOX-->
-
-
-
 <script type="text/javascript">
 	function predictionsubmit(){
 
@@ -851,7 +846,6 @@ $(document).ready(function(){
 	}
 
 </script>
-
 <!-- Input Box value -->
 <script>
 (function () {
@@ -869,8 +863,9 @@ $(document).ready(function(){
             while (target && target.nodeName != 'TR') { // find TR
                 target = target.parentElement;
             }
+            //if (!target) { return; } //tr should be always found
             var cells = target.cells; //cell collection - https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement
-          
+            //var cells = target.getElementsByTagName('td'); //alternative
             if (!cells.length || target.parentNode.nodeName == 'THEAD') {
                 return;
             }
