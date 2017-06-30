@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from flask import Flask,json,Response, render_template
 import getprediction
-app = Flask(__name__, template_folder="webpage")
+app = Flask(__name__, template_folder="webpage", static_folder="static")
 
 
 @app.route("/")
