@@ -56,18 +56,23 @@ def getPrediction(match_id):
     
     Returns: String: Predicted winner of the game and probability of victory 
     '''
-    results = {}
-    match_row = matches.loc[matches['id'] == match_id]
-    team1name = match_row.team1.unique()[0]
-    team2name = match_row.team2.unique()[0]
-    toPredict = X_timetest.loc[X_timetest.index == match_id-1].values
-    prediction_prob = knn1.predict_proba(toPredict)
-    prediction = knn1.predict(toPredict)
-    if prediction[0] > 0:
-        results['name'] = str(team1name)
-        results['prob'] = float(prediction_prob[0][1])*100
-    else:
-        results['name'] = str(team2name)
-        results['prob'] = float(prediction_prob[0][0])*100
-    return results
+    try:
+        assert (399 <= match_id <= 517)
+        results = {}
+        match_row = matches.loc[matches['id'] == match_id]
+        team1name = match_row.team1.unique()[0]
+        team2name = match_row.team2.unique()[0]
+        toPredict = X_timetest.loc[X_timetest.index == match_id-1].values
+        prediction_prob = knn1.predict_proba(toPredict)
+        prediction = knn1.predict(toPredict)
+        if prediction[0] > 0:
+            results['name'] = str(team1name)
+            results['prob'] = float(prediction_prob[0][1])*100
+        else:
+            results['name'] = str(team2name)
+            results['prob'] = float(prediction_prob[0][0])*100
+        return results
+    except:
+        return None
+
 
