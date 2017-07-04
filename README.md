@@ -7,13 +7,7 @@
 ## Training Set : 2008 - 2013
 ## Test Set : 2014-2015
 
-Run server file :
-127.0.0.1/300
+Run pythonserver.py to launch the prediction model.
+Click on the Instructions and follow as instructed.
 
-Click on the Instructions as Instructed
-
-Screenshots:
-TO DO
-
-Enter Match ID for the match being Predicted.
 
