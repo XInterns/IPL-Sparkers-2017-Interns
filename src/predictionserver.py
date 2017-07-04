@@ -11,8 +11,10 @@ def home():
 def index1():
      return render_template('./index.html')
 
-
-
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catchall(path):
+    return render_template('./home.html')
 
 @app.route('/prediction/<int:mid>', methods=["GET"])
 def api_article(mid):
