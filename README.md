@@ -8,7 +8,7 @@
 ### Instructions
 
  1. Verify installation of Python and Flask
- 2. Run src/predictionserver.py and go to http://127.0.0.1:3001/ to access the prediction model
+ 2. Run src/predictionserver.py and go to 127.0.0.1:3001/ to access the prediction model
  3. Follow the given instructions
 
 
